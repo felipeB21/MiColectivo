@@ -3,7 +3,8 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors());
-app.listen(3030);
+const PORT = process.env.PORT || 3030;
+app.listen(PORT);
 
 app.get("/api/data", (req, res) => {
   fetch(
