@@ -3,8 +3,8 @@ const app = express();
 const cors = require("cors");
 
 app.use(cors());
-const PORT = process.env.PORT || 3030;
-app.listen(PORT);
+const port = process.env.PORT || 3030;
+app.listen(port);
 
 app.get("/api/data", (req, res) => {
   fetch(
@@ -14,6 +14,6 @@ app.get("/api/data", (req, res) => {
     .then((data) => res.json(data));
 });
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("This is rendering for calling our API");
 });
