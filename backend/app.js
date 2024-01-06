@@ -13,3 +13,7 @@ app.get("/api/data", (req, res) => {
     .then((requ) => requ.json())
     .then((data) => res.json(data));
 });
+
+app.use("/", (req, res) => {
+  res.send("This is rendering for calling our API");
+});
